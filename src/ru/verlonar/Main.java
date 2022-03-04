@@ -104,10 +104,13 @@ public class Main {
     }
 
     private static String salaryCalculate(int oldSalary) {
+        byte monthsPerYear = 12;
+        int oldSalaryPerYear = oldSalary * monthsPerYear;
         float rate = 1.1f;
         double newSalary = oldSalary * rate;
-        double difference = newSalary - oldSalary;
-        return ("теперь получает " + newSalary + " рублей. Годовой доход вырос на " + difference + " рублей");
+        double newSalaryPerYear = newSalary * monthsPerYear;
+        double differencePerYear = newSalaryPerYear - oldSalaryPerYear;
+        return ("теперь получает " + newSalary + " рублей. Годовой доход вырос на " + differencePerYear + " рублей");
     }
 
     private static void separate() {
